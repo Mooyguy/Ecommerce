@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-commerce Product Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+    <h1>Storefront Gateway</h1>
+    <div class="header-right">
+        <div class="cart" onclick="showPage('cartPage')">
+            🛒 Cart <span id="cartCount">0</span>
+        </div>
+        <div class="login" onclick="showPage('signinPage')">
+            🔑 Login
+        </div>
+    </div>
+</header>
+
+    <!-- Sign In Page -->
+    <div id="signinPage" class="page signin active">
+        <h2>Welcome to Storefront Gateway</h2>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="signIn()">Sign In</button>
+        <button onclick="showPage('productPage')">Back to Product Page</button>
+    </div>
+
+    <!-- Product Page -->
+    <div id="productPage" class="page">
+        <h2>Products</h2>
+        <div class="products" id="productList"></div>
+    </div>
+
+    <!-- Cart Page -->
+    <div id="cartPage" class="page">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <h3>Total: $<span id="totalCost">0</span></h3>
+        <button onclick="showPage('productPage')">← Back to Products</button>
+        <button onclick="showPage('checkoutPage')">Checkout</button>
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkoutPage" class="page">
+        <h2>Checkout</h2>
+        <p>Review your items and confirm purchase.</p>
+        <h3>Total: $<span id="checkoutTotal">0</span></h3>
+        <button onclick="confirmPurchase()">Confirm Purchase</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<footer>
+    <p>&copy; 2025 Storefront Gateway. All rights reserved.</p>
+</footer>
+
+</html>
